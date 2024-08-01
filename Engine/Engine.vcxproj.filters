@@ -1,22 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="Graphics">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{118999a2-4c22-4285-81d8-c0bb17d655d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logging">
+      <UniqueIdentifier>{837e8681-0917-4d45-8849-f7fc0373af71}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Graphics\Window.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Logging\Logger.cpp">
+      <Filter>Logging</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graphics\Window.hpp">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\DebugBreak.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Assert.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\Logger.hpp">
+      <Filter>Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Delegate.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -70,6 +70,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>Build_Intermediates\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\Builds\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IntDir>Build_Intermediates\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\Builds\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -123,6 +131,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)External\Include\RayLib\</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,7 +143,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Graphics\Window.cpp" />
+    <ClCompile Include="Logging\Logger.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graphics\Window.hpp" />
+    <ClInclude Include="Logging\Logger.hpp" />
+    <ClInclude Include="Utility\Assert.hpp" />
+    <ClInclude Include="Utility\DebugBreak.hpp" />
+    <ClInclude Include="Utility\Delegate.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
